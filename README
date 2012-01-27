@@ -33,3 +33,8 @@ To compile:
     - lunch full_ventana-eng
     - make recoveryimage
 
+
+Known issues:
+    - on some systems /sdcard is not mounted or is not mounted rw. 
+        workaround: use adb to mount /sdcard
+
