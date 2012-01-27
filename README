@@ -31,7 +31,7 @@ To compile:
     - or try this: repo init -u git://github.com/logxen/android.git -b ics; repo sync
 2. open a shell at your CyanogenMod system directory
     - . build/envsetup.sh
-    - lunch full_ventana-eng
+    - lunch full_ventana-eng (or the right device for your rom size)
     - make recoveryimage
 
 
