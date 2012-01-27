@@ -1,1 +1,40 @@
-...
+Use of any of these files is done at your own risk.
+
+This device uses three sets of device configuration files.
+You will need root on the device to use any of this.
+
+16gb model	device/lenovo/ventana		full_ventana
+32gb model	device/lenovo/ventana32		full_ventana32
+64gb model	device/lenovo/ventana64		full_ventana64
+
+
+To install:
+
+1. put the correct restore.img somewhere on the device
+    - 'internal sd' is at /data/media
+    - external sd is at /mnt/external_sd
+    - usb drive is at /mnt/usbdrive
+2. dd if=/path/to/recovery.img of=/dev/block/mmcblk0p1
+    - this installs the recovery
+3. mount -o rw,remount /system
+4. mv /system/etc/install-recovery.sh /system/etc/install-recovery.bak.sh
+    - back up this file before we disable it
+    - if you ever want your default recovery back just restore this file and reboot
+5. echo "#!/system/bin/sh" > /system/etc/install-recovery.sh
+    - this file will restore recovery to factory default at every boot, so needs to be disabled
+6. mount -o ro,remount /system
+
+
+To compile:
+
+1. copy the device directory into your CyanogenMod system directory (often: ~/android/system)
+    - or try this: repo init -u git://github.com/logxen/android.git -b ics; repo sync
+2. open a shell at your CyanogenMod system directory
+    - . build/envsetup.sh
+    - lunch full_ventana-eng
+    - make recoveryimage
+
+
+Known issues:
+    - on some systems /sdcard is not mounted or is not mounted rw. 
+        workaround: use adb to mount /sdcard
