@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/lenovo/ventana/BoardConfigVendor.mk
+-include vendor/lenovo/ventana64/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := unknown
@@ -16,10 +16,10 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 6291456
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 805306368
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 13249806336
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 61513662464
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/lenovo/ventana/kernel
+TARGET_PREBUILT_KERNEL := device/lenovo/ventana64/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 # Use this flag if the board has a ext4 partition larger than 2gb
